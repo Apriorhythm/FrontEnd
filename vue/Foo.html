@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script src="vue.min.js"></script>
+    </head>
+
+<body>
+
+    <div id = "Apriori">
+        <p>{{ SayWhat('YO!') }}</p>
+        <p id = "1">Name: {{ name }}</p>
+        <p id = "2">What: {{ what }}</p>
+    </div>
+
+
+
+    <script>
+        new Vue({
+            el: '#Apriori',
+            data:{
+                name: 'Leonard Walker',
+                what: 'Yo !'
+            },
+
+            methods: {
+                SayWhat: function(word){
+                    return 'Just say ' + word;
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>
