@@ -4,9 +4,10 @@
     </head>
 
 <body>
-
     <div id = "Apriori">
+
         <p>{{ SayWhat('YO!') }}</p>
+
         <p id = "1">Name: {{ name }}</p>
         <p id = "2">What: {{ what }}</p>
     </div>
@@ -22,6 +23,7 @@
             },
 
             methods: {
+                /* word 是参数 */
                 SayWhat: function(word){
                     return 'Just say ' + word;
                 }

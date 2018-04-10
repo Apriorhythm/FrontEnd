@@ -1,0 +1,53 @@
+<!--
+    v-on:mousemove:= 鼠标移动
+-->
+<html>
+    <head>
+        <script src="vue.min.js"></script>
+    </head>
+
+<body>
+    <div id="Apriori">
+
+        <p>Number = {{ AprioriNumber }}</p>
+
+        <button v-on:click.once="AprioriNumber++">Add</button>
+        <button v-on:click="AprioriNumber--">Add</button>
+        <br><br>
+        <button v-on:click="increase10">Increase 10</button>
+        <br><br>
+        <button v-on:dblclick="increaseBy(100)">Increase By</button>
+
+        <br><br><br><br>
+        {{ x }}, {{ y }}
+        <div v-on:mousemove="updateXY" style="padding:125px;border:solid;"></div>
+
+    </div>
+
+    <script>
+        new Vue({
+            el: '#Apriori',
+            data:{
+                AprioriNumber: 25,
+
+                x: 0,
+                y: 0
+            },
+            methods:{
+                increase10:function(){
+                    this.AprioriNumber += 10;
+                },
+
+                increaseBy:function(step){
+                    this.AprioriNumber += step;
+                },
+
+                updateXY:function(event){
+                    this.x = event.offsetX;
+                    this.y = event.offsetY;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

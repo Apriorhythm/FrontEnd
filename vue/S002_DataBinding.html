@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <script src="vue.min.js"></script>
+    </head>
+
+<body>
+    <div id = "Apriori">
+        <a v-bind:href="AprioriURL">The Link of Asphalt 8</a>
+        &nbsp;
+        <input type="text" v-bind:value="AprioriString" />
+        <br>
+
+        <!--
+            v-html 会直接把绑定的数据作为InnerHTML
+        -->
+        <p v-html="AprioriAnotherURL"></p>
+
+    </div>
+
+
+
+    <script>
+        new Vue({
+            el: '#Apriori',
+            data:{
+                AprioriURL: 'http://www.gameloft.com/asphalt8/',
+                AprioriString: '狂野飙车8',
+
+                AprioriAnotherURL: '<a href="http://music.163.com/#/playlist?id=24540440">My Music</a>'
+
+            },
+        })
+    </script>
+</body>
+</html>
