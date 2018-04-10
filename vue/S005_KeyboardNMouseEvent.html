@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <script src="vue.min.js"></script>
+    </head>
+
+<body>
+    <div id="Apriori">
+        <input v-on:keyup.enter="KeyEnterUp">
+        <br><br>
+        <input v-on:click.left="MouseLeftClick">
+    </div>
+
+    <script>
+        new Vue({
+            el: '#Apriori',
+            methods:{
+                KeyEnterUp:function(){
+                    alert("Why enter ???");
+                },
+
+                MouseLeftClick:function(){
+                    alert("Right---------Now is left");
+                }
+            }
+        })
+    </script>
+</body>
+</html>
+
+

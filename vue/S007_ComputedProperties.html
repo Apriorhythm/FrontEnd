@@ -1,0 +1,91 @@
+<!--
+    在浏览器中的Console中查看这段代码便可以理解computed的作用
+-->
+<html>
+    <head>
+        <script src="vue.min.js"></script>
+    </head>
+
+<body>
+    <div id = "Apriori">
+
+        <button v-on:click="a++">addA</button>
+        <button v-on:click="b++">addB</button><br>
+
+        <span>A: {{ a }}</span><br>
+        <span>B: {{ b }}</span><br><br>
+
+        <span>MethodA: {{ methodA() }}</span><br>
+        <span>MethodB: {{ methodB() }}</span><br><br>
+
+        <span>ComputedA: {{ computedA }}</span><br>
+        <span>ComputedB: {{ computedB }}</span><br><br>
+
+        <!-- 无论哪个值发生改变，所有的method都会执行 -->
+        {{ alwaysRun() }}
+
+        <!--
+        {{ deadLoopCode() }}
+        -->
+    </div>
+
+
+    <script>
+        new Vue({
+            el: '#Apriori',
+
+            data:{
+                a: 7,
+                b: 6,
+                AprioriValue: 10
+            },
+
+            methods:{
+                methodA:function(){
+                    console.log('MethodA');
+                    return this.a + this.AprioriValue;
+                },
+                methodB:function(){
+                    console.log('MethodB');
+                    return this.b + this.AprioriValue;
+                },
+
+                /*
+                 * 每一次更新a或者b，这个function都会执行
+                 * 因为，vue会重新执行所有代码
+                 */
+
+                alwaysRun:function(){
+                    alert('Always Run Here');
+                },
+
+                /*
+                 * 以下代码会导致死循环，因为，只要任意一个值发生改变
+                 * 那么，vue会重新执行所有methods，然后再次回到这个method
+                 *   deadLoopCode:function(){
+                 *       this.a++;
+                 *       alert("Yo!");
+                 *   },
+                 */
+
+            },
+
+            computed: {
+                /*
+                 * computedA只会在a改变时执行，而不是像methods那样
+                 * 简单来说：依赖更改则执行
+                 */
+                computedA:function(){
+                    console.log('ComputedA');
+                    return this.a + this.AprioriValue;
+                },
+                computedB:function(){
+                    console.log('ComputedB');
+                    return this.b + this.AprioriValue;
+                },
+            }
+        })
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,75 @@
+<!--
+    v-for: 循环    
+-->
+<html>
+    <head>
+        <script src="vue.min.js"></script>
+    </head>
+
+<body>
+    <div id = "Apriori">
+        <h1>Looping</h1>
+
+        <p> ######################################### </p><br>
+        <ul>
+            <li v-for="AprioriValue in ValueArray">
+                {{ AprioriValue }}
+            </li>
+        </ul>
+
+        <p> ######################################### </p><br>
+        <ul>
+            <li v-for="AprioriValue in ValueArray">
+                {{ AprioriValue.English }} -- {{ AprioriValue.ArabicNumeral }}
+            </li>
+        </ul>
+
+
+        <p> ######################################### </p><br>
+        <ul>
+            <li v-for="(AprioriValue, index) in ValueArray">
+                {{ index }} -- {{ AprioriValue.ArabicNumeral }}
+            </li>
+        </ul>
+
+
+        <p> ######################################### </p><br>
+        <!-- 每次循环都会加一个div外壳 -->
+        <div v-for="(AprioriValue, index) in ValueArray">
+            {{ index }}--{{ AprioriValue.English}}--{{AprioriValue.ArabicNumeral}}
+        </div>
+
+        <p> ######################################### </p><br>
+        <!-- 每次循环都只会出现template内部的内容 -->
+        <template v-for="(AprioriValue, index) in ValueArray">
+            {{ index }}--{{ AprioriValue.English}}--{{AprioriValue.ArabicNumeral}}
+        </template>
+
+
+        <p> ######################################### </p><br>
+        <!-- 对象的循环 -->
+        <template v-for="AprioriValue in ValueArray">
+            <div v-for="(value, key) in AprioriValue">
+                <p>{{ key }} -- {{ value }}</p>
+            </div>
+        </template>
+
+
+    </div>
+
+
+    <script>
+        new Vue({
+            el: '#Apriori',
+            data:{
+                ValueArray: [
+                    {English: 'Two', ArabicNumeral: 2},
+                    {English: 'Five', ArabicNumeral: 5},
+                    {English: 'Zero', ArabicNumeral: 0}
+                ]
+            },
+        })
+    </script>
+</body>
+</html>
+

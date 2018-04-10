@@ -1,0 +1,45 @@
+<!--
+    v-if    : 隐藏p的时候是直接删除整个p
+    v-show  : 隐藏p的时候只是把p的display属性设置为none
+-->
+<html>
+    <head>
+        <script src="vue.min.js"></script>
+    </head>
+
+<body>
+    <div id = "Apriori">
+        <h1>Conditional</h1>
+
+        <button v-on:click="error = !error">Error</button>
+        <button v-on:click="success = !success">Success</button>
+
+        <p v-show="error">error</p>
+        <p v-show="success">SUCCESS</p>
+
+        <!-- 等效代码
+        <p v-if="error">Error Click</p>
+        <p v-if="success">Success Click</p>
+        -->
+
+<!--
+        以下代码非以上代码的等效代码，
+        以下代码仅作为介绍v-else-if
+        <p v-if="error">Error Click</p>
+        <p v-else-if="success">Success Click</p>
+-->
+    </div>
+
+
+    <script>
+        new Vue({
+            el: '#Apriori',
+            data:{
+                error: false,
+                success: false
+            },
+
+        })
+    </script>
+</body>
+</html>

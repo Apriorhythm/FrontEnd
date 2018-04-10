@@ -1,0 +1,39 @@
+<!--
+    动态增删CSS属性
+    相当于jQuery的
+        $("p").removeClass("YourClassName");
+        $("p").addClass("YourClassName");
+-->
+<html>
+    <head>
+        <script src="vue.min.js"></script>
+    </head>
+
+<body>
+    <div id = "Apriori">
+        <h1>Dynamic CSS</h1>
+        <button v-on:click="hasAprioriClass=!hasAprioriClass">Click Me</button>
+        <div v-bind:class="{AprioriClassName:hasAprioriClass}">
+            Content inside div
+        </div>
+    </div>
+
+
+    <style type="text/css">
+        .AprioriClassName {
+            background-color: blue;
+        }
+    </style>
+
+
+    <script>
+        new Vue({
+            el: '#Apriori',
+            data:{
+                hasAprioriClass: false,
+            },
+
+        })
+    </script>
+</body>
+</html>

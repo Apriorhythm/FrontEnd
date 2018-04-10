@@ -1,0 +1,28 @@
+<!--
+    https://cn.vuejs.org/v2/guide/forms.html
+-->
+<html>
+    <head>
+        <script src="vue.min.js"></script>
+    </head>
+
+<body>
+
+    <div id="Apriori">
+        <input v-model="AprioriValue">
+        <br><br>
+        <span>The AprioriValue is:   {{ AprioriValue }}<span>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#Apriori',
+            data:{
+                AprioriValue: 'Yo!'
+            }
+        })
+    </script>
+</body>
+</html>
+
+
