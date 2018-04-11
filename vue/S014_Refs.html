@@ -1,0 +1,47 @@
+<!--
+    this.$refs.RefsName;
+-->
+<html>
+    <head>
+        <script src="vue.min.js"></script>
+    </head>
+
+<body>
+
+    <h1>Refs</h1>
+
+    <div id = "Apriori">
+        <p> ######################################### </p><br>
+        <input type="text" ref="AprioriInput"/>
+        <button v-on:click="AprioriRefs">Click Me</button>
+        <p>This is your output: {{ AprioriOutput }}</p>
+        <br><br>
+
+        <label ref="LabelRefs">Label Words Here</label>
+        <button v-on:click="AnotherRefs">Click Me</button>
+    </div>
+
+
+
+    <script>
+        new Vue({
+            el: '#Apriori',
+            data:{
+                AprioriOutput: ''
+            },
+
+            methods: {
+                AprioriRefs: function(){
+                    this.AprioriOutput = this.$refs.AprioriInput.value;
+                },
+
+                AnotherRefs: function(){
+                    alert(this.$refs.LabelRefs.innerText);
+                }
+            },
+        })
+    </script>
+</body>
+</html>
+
+

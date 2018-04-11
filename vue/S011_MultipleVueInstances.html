@@ -1,0 +1,77 @@
+<!--
+    var variableName = new Vue({ });
+    DON'T FORGET ";"
+-->
+<html>
+    <head>
+        <script src="vue.min.js"></script>
+    </head>
+
+<body>
+
+    <h1>Multiple Vue Instances</h1>
+
+    <div id = "Apriori_1">
+        <p>Word1: {{ word1 }}</p>
+        <!--
+            请不要写下面的代码，因为changeWord1是在v2中定义的，
+            在v1这个div的区域内是找不到这个mehtod的
+            <button v-on:click="changeWord1()">Change Word1</button>
+        -->
+        <button v-on:click="changeWord2()">Change Word2</button>
+        <button v-on:click="showWord2()">Show Word2</button>
+    </div>
+    <br>
+    <p> ######################################### </p><br>
+    <div id = "Apriori_2">
+        <p>Word2: {{ word2 }}</p>
+
+        <button v-on:click="changeWord1()">Change Word1</button>
+        <button v-on:click="showWord1()">Show Word1</button>
+    </div>
+    
+
+
+    <script>
+        var v1 = new Vue({
+            el: '#Apriori_1',
+            data:{
+                word1: 'Leonard'
+            },
+
+            methods: {
+                changeWord2:function(){
+                    v2.word2 = 'Walker Change';
+                },
+
+                showWord2:function(){
+                    alert(v2.word2);
+                }
+
+            },
+
+        });
+
+        var v2 = new Vue({
+            el: '#Apriori_2',
+            data:{
+                word2: 'Walker'
+            },
+
+            methods: {
+                changeWord1:function(){
+                    v1.word1 = 'Leonard Change';
+                },
+
+                showWord1:function(){
+                    alert(v1.word1);
+                }
+
+            },
+        });
+
+    </script>
+</body>
+</html>
+
+
