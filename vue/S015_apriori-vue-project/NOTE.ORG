@@ -1,0 +1,6 @@
+* 流程
+// 以下文件在src文件夹中
+
+App.vue 写vue代码 -->
+    main.js引入App.vue --> 
+        index.html

@@ -1,0 +1,5 @@
+* 全局component
+** 流程
+新建并编辑youComponentName.vue -->
+    main.js 引入并注册component -->
+        App.vue 使用component

@@ -1,0 +1,13 @@
+#+TITLE: VueCLI(vue commandline interface)
+
+* Install
+1. 安装node.js
+2. 安装npm
+3. 安装vue-cli
+    npm install -g vue-cli
+4. 新建一个项目
+    vue init webpack-simple apriori-vue-project
+5. 安装依赖包
+    npm install
+6. 启动项目
+    npm run dev
