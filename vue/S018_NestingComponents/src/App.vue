@@ -3,7 +3,12 @@
     <apriori-header></apriori-header>
 
     <hr>
-        <p>##########################</p>
+        <p>
+            This is the main content.
+            Do whatever you want!
+                    -- From Apriorhythm
+        </p>
+
     <hr>
 
     <apriori-footer></apriori-footer>
