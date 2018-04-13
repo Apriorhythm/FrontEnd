@@ -1,0 +1,11 @@
+#+TITLE: Lift Cycle Hooks
+
+* [[https://cn.vuejs.org/v2/guide/instance.html][生命周期图]]
+
+* beforeCreate, created等函数可以在Vue中直接访问，写法如下
+
+#+BEGIN_SRC javascript
+created(){
+
+}
+#+END_SRC
