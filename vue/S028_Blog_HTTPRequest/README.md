@@ -1,4 +1,4 @@
-# S027_Blog_SelectBoxBinding
+# S028_Blog_HTTPRequest
 
 > A Vue.js project
 
@@ -30,4 +30,10 @@ npm install vue-resource --save
 
 官方教程
 =========
-https://github.com/pagekit/vue-resource
+[Vue-Resource](https://github.com/pagekit/vue-resource)
+
+
+数据库
+=========
+本项目的数据库使用的是线上的一个API而非本地数据库，来自JSONPlaceholder
+[JSONPlaceholder](https://jsonplaceholder.typicode.com)
