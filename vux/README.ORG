@@ -1,0 +1,7 @@
+#+TITLE: Vux 学习项目
+
+* 项目来源
+*该项目直接复制自FrontEnd/vue/S036_RouteParameters*
+
+* 必备知识
+- Vue
